@@ -12,3 +12,28 @@
 
 # Push public key from Windows PC to a server:
     type <path to id_rsa.pub> | ssh user@host "cat >> .ssh/authorized_keys"
+
+# Configure SSH to automatically select username and key for each host
+1. Create a config file to define shortcut name for each host, the username to use and which key to use for said host.
+    touch/nano/vim ~/.ssh/config
+
+    in the config file:
+    Host host1
+        HostName    host1.com
+        user    user1
+        IdentityFile ~/.ssh/id_rsa 
+    
+    Host 192.16.0.1
+        user cap
+        IdentityFile    ~/.ssh/cap_rsa
+    
+    Host server-stating
+        HostName    100.100.100.100
+        user me
+        IdentityFile ~./ssh/id_rsa
+    
+    For this example, 
+    typing "ssh host1" will connect to host1.com with user me and key rsa_id
+    typing "ssh 192.168.0.1" will connect to 192.168.0.1 with user cao and key cap_rsa
+    typing "ssh server-stating" will connect to 100.100.100.100 with user me and key id_rsa
+    
