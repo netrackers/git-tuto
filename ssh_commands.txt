@@ -36,4 +36,3 @@
     typing "ssh host1" will connect to host1.com with user me and key rsa_id
     typing "ssh 192.168.0.1" will connect to 192.168.0.1 with user cao and key cap_rsa
     typing "ssh server-stating" will connect to 100.100.100.100 with user me and key id_rsa
-    
