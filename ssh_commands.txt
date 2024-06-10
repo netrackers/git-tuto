@@ -1,0 +1,14 @@
+# Remove passphrase:
+1. Short answer:
+    ssh-keygen -p 
+        You will be prompted for the keyfile location, the old passphrase and the new passphrase (which can be left blank to have no passphrase)
+
+2. Long answer (do it all in one shot)
+    ssh-keygen -p [-P old_passphrase] [-N new_passphrase] [-f keyfile]
+
+    Notes:
+    - When executing commands they are typically logged in ~/.bash_history in plain text, including all parameters.
+    - to prevent a command from being recorded, start it with `
+
+# Push public key from Windows PC to a server:
+    type <path to id_rsa.pub> | ssh user@host "cat >> .ssh/authorized_keys"
